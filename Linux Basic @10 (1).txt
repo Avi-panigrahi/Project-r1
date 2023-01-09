@@ -1,0 +1,451 @@
+Commands for the linux
+****************************
+
+1.We need to have the permission for prform certain activity under root user
+
+initially we are the normal users 
+So to convert from the super user to root user 
+we are following the specific command i.e,==== sudo su
+---->>>> sudo=super user do
+---->>>> su  =switch user
+
+how to check in which user mode you are in
+if $----> super user
+if #---->root user
+
+Even through you are a super user but still you can perform the task which is denied by 
+taking the help of sudo
+
+if yum install httpd==========permission denied option will come
+then use sudo yum install httpd ============it will work out.
+
+
+
+2.In linux we are saying folder as Directory.
+
+
+to create the dirctory command ====mkdir <dir_name>
+mk=================================make
+dir================================Directory
+
+to create mulitple directory at a time
+
+mkdir -p <dir_1> <dir_2> <dir_3>
+
+******************************************************************************
+ ls --help
+Usage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      scale sizes by SIZE before printing them; e.g.,
+                               '--block-size=M' prints sizes in units of
+                               1,048,576 bytes; see SIZE format below
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                               modification of file status information);
+                               with -l: show ctime and sort by name;
+                               otherwise: sort by ctime, newest first
+  -C                         list entries by columns
+      --color[=WHEN]         colorize the output; WHEN can be 'never', 'auto',
+                               or 'always' (the default); more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         do not sort, enable -aU, disable -ls --color
+  -F, --classify             append indicator (one of */=>@|) to entries
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                               single-column -1, verbose -l, vertical -C
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                               can be augmented with a --sort option, but any
+                               use of --sort=none (-U) disables grouping
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l, print sizes in human readable format
+                               (e.g., 1K 234M 2G)
+ --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                               that points to a directory
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                               (overridden by -a or -A)
+      --indicator-style=WORD  append indicator with style WORD to entry names:
+                               none (default), slash (-p),
+                               file-type (--file-type), classify (-F)
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for disk usage
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                               link, show information for the file the link
+                               references rather than for the link itself
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print raw entry names (don't treat e.g. control
+                               characters specially)
+  -o                         like -l, but do not list group information
+ -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                               unless program is 'ls' and output is a terminal)
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                               literal, locale, shell, shell-always, c, escape
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                               time (-t), version (-v), extension (-X)
+      --time=WORD            with -l, show time as WORD instead of default
+                               modification time: atime or access or use (-u)
+                               ctime or status (-c); also use specified time
+                               as sort key if --sort=time
+      --time-style=STYLE     with -l, show times using style STYLE:
+                               full-iso, long-iso, iso, locale, or +FORMAT;
+                               FORMAT is interpreted like in 'date'; if FORMAT
+                               is FORMAT1<newline>FORMAT2, then FORMAT1 applies
+                               to non-recent files and FORMAT2 to recent files;
+                               if STYLE is prefixed with 'posix-', STYLE
+                               takes effect only outside the POSIX locale
+  -t                         sort by modification time, newest first
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                               with -l: show access time and sort by name;
+                               otherwise: sort by access time
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           assume screen width instead of current value
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -1                         list one file per line
+
+SELinux options:
+
+  --lcontext                 Display security context.   Enable -l. Lines
+                             will probably be too wide for most displays.
+  -Z, --context              Display security context so it fits on most
+                             displays.  Displays only mode, user, group,
+                             security context and file name.
+  --scontext                 Display only security context and file name.
+      --help     display this help and exit
+      --version  output version information and exit
+
+SIZE is an integer and optional unit (example: 10M is 10*1024*1024).  Units
+are K, M, G, T, P, E, Z, Y (powers of 1024) or KB, MB, ... (powers of 1000).
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors command to set it.
+*************************************************************************************
+
+cd============change directory helps to chamge the location from one directory to the others
+one.
+
+cd .. ========it suggest to come back.
+
+cd /../ =====it will bring to the root from any location.
+
+pwd=present working directory
+
+
+
+3.To create the file we have 3 types:
+
+a.touch command ======it helps to create a empty file or a null file.
+
+
+touch <filename>
+
+to craete multiple files ata time
+
+touch file{1..5}
+
+
+2.cat command =========it helps to create the file and add the extra contain in the file.
+
+cat > <file_name>==========you will create the file and add contain in it
+
+cat >> <file_name>=========you can add the extra contain into the same file.
+
+cat <file_name>===========you can see the contain on the file
+
+*******************************************************************************
+
+user permissions
+
+To check weather its a directory or file
+
+d=============directory
+-=============file
+
+drwxr-xr-x 
+d=========waether it is a dir/file
+ d suggest the dir.
+ 
+ r======read================================4
+ w======write===============================2
+ x======execute=============================1
+ 
+ 
+ 1================execute
+ 2================write
+ 3================write and execute
+ 4================read
+ 5================read and execute
+ 6================read and write
+ 7================read write and execute
+ 
+ 
+rwx=========suggest the permission for the USER
+
+r-x=========suggest the permission for the GROUP
+
+r-x=========suggest the permission for the OTHERS
+
+TO CHANGE THE PERMISSION
+
+chmod
+ch============change
+mod===========modification.
+
+we can change the file permission by using two method 
+a.octal method
+
+chmod 765 <file>
+
+b.common method
+
+chmod u+x,g-r,g+w,o-r <file>
+
+
+The colour diffrence
+
+blue======directory
+green=====executable file
+skyblue===linked files
+yellow with black background---linked files
+pink======graphical images
+red=======zip file
+
+
+*******************************************************************************************
+
+cal-------use to check the clander
+ cal --help
+
+Usage:
+ cal [options] [[[day] month] year]
+ cal [options] <timestamp|monthname>
+
+Display a calendar, or some part of it.
+Without any arguments, display the current month.
+
+Options:
+ -1, --one             show only a single month (default)
+ -3, --three           show three months spanning the date
+ -n, --months <num>    show num months starting with date's month
+ -S, --span            span the date when displaying multiple months
+ -s, --sunday          Sunday as first day of week
+ -m, --monday          Monday as first day of week
+ -j, --julian          output Julian dates
+ -y, --year            show the whole year
+ -Y, --twelve          show the next twelve months
+ -w, --week[=<num>]    show US or ISO-8601 week numbers
+     --color[=<when>]  colorize messages (auto, always or never)
+                         colors are enabled by default
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+*****************************************************************************************
+
+timedatectl=========to check the time and date
+
+[root@ip-172-31-35-234 satya]# timedatectl
+      Local time: Sat 2022-12-24 05:32:05 UTC
+  Universal time: Sat 2022-12-24 05:32:05 UTC
+        RTC time: Sat 2022-12-24 05:32:06
+       Time zone: n/a (UTC, +0000)
+     NTP enabled: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+      DST active: n/a
+[root@ip-172-31-35-234 satya]# timedatectl --help
+timedatectl [OPTIONS...] COMMAND ...
+
+Query or change system time and date settings.
+
+  -h --help                Show this help message
+     --version             Show package version
+     --no-pager            Do not pipe output into a pager
+     --no-ask-password     Do not prompt for password
+  -H --host=[USER@]HOST    Operate on remote host
+  -M --machine=CONTAINER   Operate on local container
+     --adjust-system-clock Adjust system clock when changing local RTC mode
+
+Commands:
+  status                   Show current time settings
+  set-time TIME            Set system time
+  set-timezone ZONE        Set system time zone
+  list-timezones           Show known time zones
+  set-local-rtc BOOL       Control whether RTC is in local time
+  set-ntp BOOL             Control whether NTP is enabled
+[root@ip-172-31-35-234 satya]#
+******************************************************************************************
+
+Copy command 
+
+cp <file_name> <destination source address>
+
+cp -p <old_filename> <new_filename>
+
+
+
+cut command /in linux we use to say move
+
+mv <file_name> <destination address>
+
+move command is also used for renaming the files
+
+mv <previous_filename> <new_filename>
+
+**************************************************************************************
+
+grep command
+
+we are using this command to search a specific word in the file 
+
+cat <file_name> | grep <specific word which you want to search>
+
+egrep command
+
+
+
+
+***************************************************************************************
+
+tail ---it is used to check the last lines 
+
+tail -n <total numbver to want to see> <file_name>
+
+head ---- it is used to check the first lines
+
+head -n <tatal number u ewant to check> <file_name>
+
+**************************************************************************************
+file management 
+
+ln=== ln command is use to make link between files
+
+
+Hard link:
+it act like a mirror copy of the original image.these links share the same inode number.
+changes made to the original or hard linked files will reflect in the other.
+when you delete hard link nothing will happen to the other file
+Hard link cant cross the file system.
+
+
+
+soft link :
+it is actual link to the original link.These links will have a differnet inode numbers
+soft links point to the original files so if the original file is deleted then the soft
+links fails.if you delete the soft link nothing will happen to the original file.
+the reason is that the actual file or the directory inode is diffrent from the soft link 
+created files inodes.soft link can cross the file system.
+
+#What are inodes in Unix?
+An inode is a data structure in UNIX operating systems that contains important 
+information pertaining to files within a file system. When a file system is created
+ in UNIX, a set amount of inodes is created, as well. Usually,
+ about 1 percent of the total file system disk space is allocated to the inode table.
+
+***************************************************************************************
+
+Deleting the files and the directories
+
+rm -rf <file_name>
+rm -rf <dir_name>
+
+****************************************************************************************
+file system
+
+[root@ip-172-31-14-50 ec2-user]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        474M     0  474M   0% /dev
+tmpfs           483M     0  483M   0% /dev/shm
+tmpfs           483M  464K  482M   1% /run
+tmpfs           483M     0  483M   0% /sys/fs/cgroup
+/dev/xvda1      8.0G  1.6G  6.5G  20% /
+tmpfs            97M     0   97M   0% /run/user/1000
+tmpfs            97M     0   97M   0% /run/user/0
+[root@ip-172-31-14-50 ec2-user]# df --help
+Usage: df [OPTION]... [FILE]...
+Show information about the file system on which each FILE resides,
+or all file systems by default.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all             include pseudo, duplicate, inaccessible file systems
+  -B, --block-size=SIZE  scale sizes by SIZE before printing them; e.g.,
+                           '-BM' prints sizes in units of 1,048,576 bytes;
+                           see SIZE format below
+      --direct          show statistics for a file instead of mount point
+      --total           produce a grand total
+  -h, --human-readable  print sizes in human readable format (e.g., 1K 234M 2G)
+  -H, --si              likewise, but use powers of 1000 not 1024
+  -i, --inodes          list inode information instead of block usage
+  -k                    like --block-size=1K
+  -l, --local           limit listing to local file systems
+      --no-sync         do not invoke sync before getting usage info (default)
+      --output[=FIELD_LIST]  use the output format defined by FIELD_LIST,
+                               or print all fields if FIELD_LIST is omitted.
+  -P, --portability     use the POSIX output format
+      --sync            invoke sync before getting usage info
+  -t, --type=TYPE       limit listing to file systems of type TYPE
+  -T, --print-type      print file system type
+  -x, --exclude-type=TYPE   limit listing to file systems not of type TYPE
+  -v                    (ignored)
+      --help     display this help and exit
+      --version  output version information and exit
+
+Display values are in units of the first available SIZE from --block-size,
+and the DF_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables.
+Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set).
+
+SIZE is an integer and optional unit (example: 10M is 10*1024*1024).  Units
+are K, M, G, T, P, E, Z, Y (powers of 1024) or KB, MB, ... (powers of 1000).
+
+FIELD_LIST is a comma-separated list of columns to be included.  Valid
+field names are: 'source', 'fstype', 'itotal', 'iused', 'iavail', 'ipcent',
+'size', 'used', 'avail', 'pcent', 'file' and 'target' (see info page).
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+For complete documentation, run: info coreutils 'df invocation'
+[root@ip-172-31-14-50 ec2-user]#
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
